@@ -1,0 +1,27 @@
+# Based on https://github.com/w3c/spec-prod/blob/main/docs/examples.md#deploy-to-github-pages
+name: Automatic Publication
+
+on:
+  pull_request: {}
+  push:
+    branches: [ $default-branch ]
+
+jobs:
+  validate-and-publish:
+    name: Validate and Publish to GitHub Pages
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: w3c/spec-prod@v2
+        with:
+          # Explicitly toolchain and source
+          TOOLCHAIN: bikeshed
+          SOURCE: index.bs
+          # Explicitly set validation in case defaults change in the future
+          VALIDATE_MARKUP: true
+          VALIDATE_WEBIDL: true
+          VALIDATE_LINKS: true
+          # Setting this value will publish the the built Bikeshed HTML to the gh-pages branch
+          GH_PAGES_BRANCH: gh-pages
+          # Deployment will be available at: https://w3c.github.io/webextensions/specification/
+          DESTINATION: specification/index.html
