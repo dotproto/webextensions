@@ -20,7 +20,6 @@ jobs:
           # Explicitly set validation in case defaults change in the future
           VALIDATE_MARKUP: true
           VALIDATE_WEBIDL: true
-          VALIDATE_LINKS: true
           # Setting this value will publish the the built Bikeshed HTML to the gh-pages branch
           GH_PAGES_BRANCH: gh-pages
           # Deployment will be available at: https://w3c.github.io/webextensions/specification/
