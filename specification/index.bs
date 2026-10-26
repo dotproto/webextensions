@@ -374,7 +374,7 @@ To determine the URL to use for matching a document, given the document, `match_
 1. If the [=scheme=] of |url| is `blob`, `data` or `filesystem`, or if |url| is `about:blank` or `about:srcdoc`:
     1. If `match_origin_as_fallback` is set to `true`:
         1. If the document's origin is a [=tuple origin=]:
-            1. Let |document-origin| be the  [=serialization of an origin|serialization=] of the document's origin.
+            1. Let |document-origin| be the [=serialization of an origin|serialization=] of the document's origin.
             1. If the [=scheme=] of |document-origin| is `http`, `https` or `file`:
                 1. Return |document-origin|.
             1. Else, return null.
